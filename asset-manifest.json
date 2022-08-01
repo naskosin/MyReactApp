@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/gallery/static/css/main.e64c5a4e.css",
-    "main.js": "/gallery/static/js/main.da8121d3.js",
+    "main.js": "/gallery/static/js/main.a16842a6.js",
     "static/js/787.0e31295a.chunk.js": "/gallery/static/js/787.0e31295a.chunk.js",
     "static/media/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.jpg": "/gallery/static/media/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.1308785552bab6e622a3.jpg",
     "index.html": "/gallery/index.html",
     "main.e64c5a4e.css.map": "/gallery/static/css/main.e64c5a4e.css.map",
-    "main.da8121d3.js.map": "/gallery/static/js/main.da8121d3.js.map",
+    "main.a16842a6.js.map": "/gallery/static/js/main.a16842a6.js.map",
     "787.0e31295a.chunk.js.map": "/gallery/static/js/787.0e31295a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e64c5a4e.css",
-    "static/js/main.da8121d3.js"
+    "static/js/main.a16842a6.js"
   ]
 }
