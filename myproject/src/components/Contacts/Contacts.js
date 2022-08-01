@@ -11,7 +11,7 @@ return (
     </div>
   <article className={styles.contacts__article}>
       <h1>Contact us at:</h1>
-     <div  className={styles.img__wrapper}> <a href="https://www.facebook.com/groups/2861971267356482" ><img src="assets/n.jpg" alt=""/></a></div>
+     <div  className={styles.img__wrapper}> <a href="https://www.facebook.com/groups/2861971267356482" ><img src="MyReactApp/assets/n.jpg" alt=""/></a></div>
     <ul className={styles.list}>
         <li>
             <p>Extress fishing</p>

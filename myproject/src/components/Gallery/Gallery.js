@@ -24,7 +24,7 @@ const Gallery = ()=>{
     <div className={styles.main__img__wrapper}>
       <img
         className={styles.main__img}
-        src='homepagePath/assets/15.jpg'
+        src='MyReactApp/assets/15.jpg'
         alt="Loading..."
       />
     </div>

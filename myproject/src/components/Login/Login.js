@@ -44,7 +44,7 @@ const Login = () => {
   return (
     <section className={styles.logincontainer}>
       <div className={styles.container}>
-        <img src="./assets/3.jpg" alt="Loading..." />
+        <img src="MyReactApp/assets/3.jpg" alt="Loading..." />
 
         <form onSubmit={onLogin} className={styles.containertext}>
           <h2>Login</h2>

@@ -41,7 +41,7 @@ authService
     <section id="register-container" className={styles.registercontainer}>
       <div className={styles.registercontainerinfo}>
         <img
-          src="./assets/Ryuki-Spearhead-80S.jpeg"
+          src="MyReactApp/assets/Ryuki-Spearhead-80S.jpeg"
           alt=""
         />
 
