@@ -10,14 +10,7 @@ return(
     </div>
   <article className={styles.about__article} >
       <h1>About Us</h1>
-    <p>
-      It was close to 10 p.m. William Breasette had already packed up his
-      fishing gear on the bank of the Susquehanna River and was ready to head
-      home.His son, Liam, wanted just one more cast.That cast landed. What ensued was a 30-minute struggle which led to the
-      fish story of a lifetime.Liam, with help from his dad, reeled in a 49-inch musky. Both Breasettes
-      called it a “once-in-a-lifetime fish.”
-    </p>
-
+   
     
     <p><q>Give a man a fish, and you feed him for a day. Teach a man to fish, and you feed him for a lifetime.</q>
    
