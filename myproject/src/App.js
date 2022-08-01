@@ -26,6 +26,7 @@ function App() {
 
         <main>
           <Routes>
+          <Route path="/MyReactApp" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/create" element={<Create />} />
@@ -36,7 +37,6 @@ function App() {
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/About" element={<About />} />
             <Route path="/gallery/edit/:baitId" element = {<Edit />}/>
-
             <Route path="/mybaits" element={<MyBaits/>}/>
             <Route path="/biggestfishes" element={<BiggestFishes />} />
           </Routes>
