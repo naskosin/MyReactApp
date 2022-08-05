@@ -35,7 +35,7 @@ const Create = () => {
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="/assets/03.png" alt="Loading..." />
+      <img src="MyReactApp/assets/03.png" alt="Loading..." />
 
       <form className={styles.containertext} onSubmit={create}>
         <h2>Create Catch</h2>

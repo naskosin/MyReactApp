@@ -47,7 +47,7 @@ const Edit = () => {
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="/assets/01-azores-baiting.jpg" alt="image" />
+      <img src="MyReactApp/assets/01-azores-baiting.jpg" alt="image" />
 
       <form className={styles.containertext} onSubmit={editOne}>
         <h2>Edit Catch</h2>
