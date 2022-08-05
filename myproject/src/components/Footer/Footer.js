@@ -6,7 +6,7 @@ const Footer = () =>{
         <footer >
   
     <div className={styles.description}>
-        <img className={styles.footer__img}  src="MyReactApp/assets/61.jpg" alt="" />
+        <img className={styles.footer__img}  src="assets/61.jpg" alt="" />
         <p className={styles.description__p}>Spinning is one of the most widespread and popular techniques around the world for that can be done in both saltwater and freshwater.</p>
     </div>
     <nav><ul className={styles.description__ul}>

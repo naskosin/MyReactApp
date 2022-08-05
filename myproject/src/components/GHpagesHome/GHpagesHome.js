@@ -1,5 +1,5 @@
 import styles from './Home.module.css'
-export const Home = ()=>{
+ const GHpagesHome = ()=>{
 
 
     return(
@@ -11,3 +11,4 @@ export const Home = ()=>{
 </section>
     )
 }
+export default GHpagesHome;

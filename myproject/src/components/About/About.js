@@ -6,7 +6,7 @@ const About = ()=>{
 return(
     <section className={styles.top}>
     <div className={styles.top__img__wrapper}>
-        <img src="MyReactApp/assets/4.jpeg" alt=""/>
+        <img src="assets/4.jpeg" alt=""/>
     </div>
   <article className={styles.about__article} >
       <h1>About Us</h1>
