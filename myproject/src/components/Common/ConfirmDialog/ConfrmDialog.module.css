@@ -1,0 +1,15 @@
+.modal{
+    background-color: red;}
+.btn-custom{
+  background-color: #e9d70b;
+}
+.btncustom:hover{
+    background-color: #e90b0b; 
+}
+.background{
+background-color: lightskyblue;
+}
+.modal_paragraph{
+    font-size: 25px;
+    color: #e90b0b;
+}

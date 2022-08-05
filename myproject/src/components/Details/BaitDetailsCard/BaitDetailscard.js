@@ -6,18 +6,31 @@ import { Link } from 'react-router-dom';
 
 
 
-const BaitDetailsCard =({bait})=>{
+const BaitDetailsCard =({bait,  setShowDeleteDialog})=>{
 const navigate = useNavigate();
 const { userInfo } = useAuthContext();
 const token = userInfo.accessToken;
 
- 
-    const deletePost = () => {
-        console.log()
-        baitService.deleteOneBait(token, bait._id).then((data) => console.log(data));
-        navigate("/");
-      };
 
+const deleteClick =()=>{
+  setShowDeleteDialog(true)
+}
+ 
+const ownerButtons = <div>
+<button  className={styles.edit}>
+  <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link>
+</button>
+<button className={styles.delete} onClick={deleteClick} >
+  Delete article
+</button>
+</div>;
+
+    //const deletePost = () => {
+    //  
+    //    baitService.deleteOneBait(token, bait._id).then((data) => console.log('deleted'));
+    //    navigate("/");
+    //  };
+//
 
   return (
 
@@ -28,7 +41,7 @@ const token = userInfo.accessToken;
           </div>
           <div className={styles.detailsdiv}>
             <p>
-              <span>Fish species: </span> {bait.species}{" "}
+              <span>Bait type: </span> {bait.baitType}{" "}
             </p>
             <p>
               <span className={styles.span}>Bait: </span> {bait.bait}
@@ -43,18 +56,10 @@ const token = userInfo.accessToken;
               <span>Weight: </span>
               {bait.weight}kg.
             </p>
-            {userInfo._id === bait._ownerId ? (
-              <div>
-                <button className={styles.delete}>
-                  <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link>
-                </button>
-                <button className={styles.edit} onClick={deletePost} >
-                  Delete article
-                </button>
-              </div>
-            ) : (
-              ""
-            )}
+            {userInfo._id === bait._ownerId ? 
+              ownerButtons
+             : 
+              " "}
           </div>
         </article>
       </section>
