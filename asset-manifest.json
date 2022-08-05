@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/MyReactApp/static/css/main.cc9098ee.css",
-    "main.js": "/MyReactApp/static/js/main.d1be0ce4.js",
+    "main.js": "/MyReactApp/static/js/main.bec60e9b.js",
     "static/js/787.0e31295a.chunk.js": "/MyReactApp/static/js/787.0e31295a.chunk.js",
     "static/media/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.jpg": "/MyReactApp/static/media/bedrefiskeutstyr-no duo spearhead ryuki wobbler til ørret trout fiske ørret maximus ultimatum.1308785552bab6e622a3.jpg",
     "index.html": "/MyReactApp/index.html",
     "main.cc9098ee.css.map": "/MyReactApp/static/css/main.cc9098ee.css.map",
-    "main.d1be0ce4.js.map": "/MyReactApp/static/js/main.d1be0ce4.js.map",
+    "main.bec60e9b.js.map": "/MyReactApp/static/js/main.bec60e9b.js.map",
     "787.0e31295a.chunk.js.map": "/MyReactApp/static/js/787.0e31295a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cc9098ee.css",
-    "static/js/main.d1be0ce4.js"
+    "static/js/main.bec60e9b.js"
   ]
 }
