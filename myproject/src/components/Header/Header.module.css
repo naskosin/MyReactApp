@@ -31,31 +31,14 @@
   font-weight: bold;
   font-size: 1.1rem;
 }
-.header__button{
-  color: rgb(234, 16, 162);
-  font-family: Lobster, sans-serif;
-  letter-spacing: 1px;
-  
-  font-style: italic;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-align: center;
-  display: inline-block;
-  
-  border-radius: 4px;
-  background-color: greenyellow;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
 .header > h1 {
   padding: 10px;
 
   font-family: Dancing Script, serif;
 
   margin-top: 20px;
-  padding-left: 40px;
-  font-size: 6rem;
+  padding-left: 20px;
+  font-size: 5rem;
 
   text-align: left;
   color: lightskyblue;
@@ -107,7 +90,23 @@ h4 {
   background-color: lightskyblue;
   border-top-left-radius: 30px;
 }
-
+.header__button{
+  color: rgb(234, 16, 162);
+  font-family: Lobster, sans-serif;
+  letter-spacing: 1px;
+  
+  font-style: italic;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+  display: inline-block;
+  
+  border-radius: 4px;
+  background-color: greenyellow;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
 
 .notification {
   position: absolute;
