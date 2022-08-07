@@ -47,7 +47,7 @@ const Edit = () => {
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="assets/01-azores-baiting.jpg" alt="image" />
+      <img src="/assets/01-azores-baiting.jpg" alt="image" />
 
       <form className={styles.containertext} onSubmit={editOne}>
         <h2>Edit Catch</h2>
@@ -129,13 +129,13 @@ const Edit = () => {
           }
         />
 
-        {error.img && error.img !== "Filled" ? (
-          <p className={styles.errorParagraph}>{error.img}</p>
+        {error.fish_img && error.fish_img !== "Filled" ? (
+          <p className={styles.errorParagraph}>{error.fish_img}</p>
         ) : (
           ""
         )}
 
-        <label htmlFor="certificate">Story:</label>
+        <label className={styles.label} htmlFor="certificate">Story:</label>
         <textarea
           type="text"
           placeholder="This day..."
