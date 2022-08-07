@@ -1,5 +1,6 @@
 import Header from "./components/Header/Header";
 import About from "./components/About/About";
+import Search from "./components/Search/Search";
 import BiggestFishes from "./components/BiggestFishes/BiggestFishes";
 import MyBaits from "./components/MyBaits/MyBaits";
 import GHpagesHome from "./components/GHpagesHome/GHpagesHome";
@@ -27,14 +28,14 @@ function App() {
 
         <main>
           <Routes>
-          <Route path="/MyReactApp" element={<GHpagesHome />} />
+          <Route path="/MyReactApp" element={<Home />} />
             <Route path="/" element={<Home />} />
             <Route path="/register" element={<Register />} />
             <Route path="/create" element={<Create />} />
             <Route path="/login" element={<Login />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/gallery/:baitId" element={<Details />} />
-            
+            <Route path="/search" element={<Search />} />
             <Route path="/contacts" element={<Contacts />} />
             <Route path="/About" element={<About />} />
             <Route path="/gallery/edit/:baitId" element = {<Edit />}/>
