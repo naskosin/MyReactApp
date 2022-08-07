@@ -29,8 +29,12 @@ section{
   
     text-indent: 50px;
 }
+.div__descripton{
+    text-align: right;
+}
 .top__span{
-        
+    
+
         font-style: italic;
         font-size: 40px;
         text-align: left;
@@ -39,21 +43,32 @@ section{
   
 }
 .top__span__bottom{
-    
-    font-style: italic;
+    font-family: Lobster, sans-serif;
+   
     font-size: 40px;
     text-align: left;
     color: lightskyblue;
+    padding: 0;
+    display: inline;
    
 
 }
+.top__span__bottom_notLogged{
+    color: red;
+
+}
 .top__description__bottom{
+    width: 100%;
     font-style: bold;
-    font-size: 40px;
-    text-align: left;
-    color: lightskyblue;
-    margin-right: 70px;
-    text-indent: 250px;
+    font-size: 50px;
+    text-align: justify;
+    color: rgb(234, 16, 162);
+    font-family: Dancing Script, serif;
+
+    margin-right: 170px;
+   
+    display: block;
+   
 }
 .no_fishes{
     margin: 250px 0 300px 100px;
