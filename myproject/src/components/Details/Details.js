@@ -1,23 +1,28 @@
-import { isAuth } from "../../guards/isAuth";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import BaitDetailsCard from "./BaitDetailsCard/BaitDetailscard";
 import { useNavigate } from "react-router-dom";
-
 import * as baitService from "../../services/baitService";
 import * as commentService from "../../services/commentService";
 import Comment from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useCommentValidator } from "../../hooks/useCommentValidator";
 import ConfirmDialog from "../Common/ConfirmDialog/ConfirmDialog";
+import { useNotifyContext } from "../../contexts/NotifyContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Details.module.css";
 
 const Details = () => {
-  const [bait, setBait] = useState([]);
-  const [comments, commentsState] = useState([]);
+  const initialState  = { text: "" };
+  const [error, setError, isFormValid] = useCommentValidator(initialState);
+
+  const [bait, setBait] = useState({});
+  const [comments, setComments] = useState([]);
   const { userInfo } = useAuthContext();
   const { baitId } = useParams();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
+  const { errorNotification, notification } = useNotifyContext();
+
   const navigate = useNavigate();
 
   console.log(baitId);
@@ -28,23 +33,23 @@ const Details = () => {
 
   useEffect(() => {
     commentService.getAllComments(baitId).then((res) => {
-      console.log(res);
+    
 
-      commentsState(res);
+      setComments(res);
     });
     baitService.getOneBait(baitId).then((res) => {
       setBait(res);
     });
   }, []);
 
-
   const deleteBait = () => {
     baitService
       .deleteOneBait(token, bait._id)
-      .then((data) => 
-    navigate("/gallery"));
-  };
-  
+      .then(() => navigate("/gallery"))
+      .catch((err) => {
+        notification(err);
+        console.log(errorNotification)})
+  }
   const createYourComment = (e) => {
     e.preventDefault();
     let { text } = Object.fromEntries(new FormData(e.currentTarget));
@@ -52,7 +57,7 @@ const Details = () => {
     let commentData = { text, email, baitId };
     commentService
       .createComment(token, commentData)
-      .then((res) => commentsState((state) => [...state, res]));
+      .then((res) => setComments((state) => [...state, res]));
     e.target.reset();
   };
 
@@ -78,7 +83,7 @@ const Details = () => {
               commentId={x._id}
               baitId={baitId}
               comments={comments}
-              setComments={commentsState}
+              setComments={setComments}
             />
           ))}
         </section>
@@ -97,12 +102,14 @@ const Details = () => {
             id="uses"
             placeholder="This day"
             name="text"
+            onBlur={setError}
           ></textarea>
-
-          <button>Comment</button>
+ {error.text !== "Filled" && error.text ? <p className={styles.errorParagraph}>{error.text}</p> : ""}
+          <button disabled={!isFormValid} className={styles.button}>Comment</button>
         </form>
       </div>
     </>
   );
 };
-export default isAuth(Details);
+export default Details;
+
