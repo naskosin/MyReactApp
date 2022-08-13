@@ -5,7 +5,7 @@ const Contacts = () => {
     <section className={styles.top}>
       <div className={styles.left__wrapper}>
         <p className={styles.contacts__paragraph}>
-          Fishing could be less hard, when you have right bait.
+        Fishing could be less hard, when you have the right bait.
         </p>
       </div>
       <article className={styles.contacts__article}>
