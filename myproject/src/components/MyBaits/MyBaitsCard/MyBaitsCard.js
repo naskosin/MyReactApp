@@ -13,7 +13,7 @@ const MyBaitsCard = ({bait, index})=> {
            
                  
              </div>
-            <p class= "my__catches__description"><span class= "my__catches__description__span">Catched on:</span> {index+1}</p> 
+            <p className={styles.my__catches__description}>{bait.bait} </p> 
              </article></li>
     )
 }

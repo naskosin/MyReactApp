@@ -147,7 +147,7 @@ const Edit = () => {
           className={
             error.story && error.story !== "Filled"
               ? styles.inputerror
-              : styles.input
+              : styles.textarea
           }
         ></textarea>
         {error.story && error.story !== "Filled" ? (

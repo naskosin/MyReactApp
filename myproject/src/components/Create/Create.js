@@ -38,7 +38,7 @@ const Create = () => {
       <img src="assets/03.png" alt="Loading..." />
 
       <form className={styles.containertext} onSubmit={create}>
-        <h2>Create Catch</h2>
+        <h2>Post Bait</h2>
         <p className={styles.paragraph}>Add your fish of lifetime!</p>
 
         <label htmlFor="title">Bait Type:</label>

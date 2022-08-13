@@ -1,10 +1,10 @@
-import styles from "./Gallery.module.css";
+import styles from "./AllBaits.module.css";
 import { useEffect, useState } from "react";
 import BaitCard from "./BaitCard/BaitCard";
 import * as baitServices from "../../services/baitService";
 
 const AllBaits = () => {
-  const [baits, setBaits] = useState([]);
+  const [baits, setBaits] = useState();
   useEffect(() => {
     baitServices.getAllBaits().then((result) => {
       console.log(result);
@@ -42,7 +42,7 @@ const AllBaits = () => {
                </ul></div>
             : (
               <p className={styles.no_fishes}>
-                <span>Ooops!</span> There's no fishes in the dock. Change your
+                <span>Ooops!</span> There's no baits in the gallery. Post your
                 bait and try again!
               </p>
             )) :

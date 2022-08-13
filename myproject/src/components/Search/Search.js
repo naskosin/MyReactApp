@@ -1,6 +1,6 @@
 import styles from "./Search.module.css";
 import * as baitServices from "../../services/baitService";
-import BaitCard from "../Gallery/BaitCard/BaitCard";
+import BaitCard from "../AllBaits/BaitCard/BaitCard";
 
 import { useState } from "react";
 

@@ -32,7 +32,7 @@ authService
           notification(err);
         });
     } else {
-      notification("Error rePassword")
+      notification("Password and repeat password do not match!!!")
      
     }
 

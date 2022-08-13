@@ -1,28 +1,30 @@
 import styles from "./Login.module.css";
 import * as authService from "../../services/authService";
-import { isNotAuth } from "../../guards/isNotAuth";
 import { useNotifyContext } from "../../contexts/NotifyContext";
-
 import { useAuthContext } from "../../contexts/AuthContext";
-
 import { useValidateHandler } from "../../hooks/useAuthValidator";
 import { useNavigate } from "react-router-dom";
 
 
-
 const Login = () => {
-   const {  login } =useAuthContext();
-  const {errorNotification, notification } = useNotifyContext();
- 
+
+
+
+  const { login } = useAuthContext();
+  const { errorNotification, notification } = useNotifyContext();
+
   const initialState = { email: "", password: "", rePassword: "Filled" };
   const [error, setError, isFormValid] = useValidateHandler(initialState);
-  
-  
-  
+
   const navigate = useNavigate();
+
+
+
+
 
   const onLogin = (e) => {
     e.preventDefault();
+  
     let formData = new FormData(e.currentTarget);
     let email = formData.get("email");
 
@@ -37,14 +39,14 @@ const Login = () => {
       })
       .catch((err) => {
         notification(err);
-        console.log(errorNotification)
+        console.log(errorNotification);
       });
   };
 
   return (
     <section className={styles.logincontainer}>
       <div className={styles.container}>
-        <img src="assets/3.jpg" alt="Loading..." />
+        <img src="./assets/3.jpg" alt="Loading..." />
 
         <form onSubmit={onLogin} className={styles.containertext}>
           <h2>Login</h2>
@@ -64,7 +66,7 @@ const Login = () => {
             }
           />
           {error.email !== "Filled" && error.email ? (
-            <p id="errors">{error.email}</p>
+            <p className={styles.errorParagraph} id="errors">{error.email}</p>
           ) : (
             ""
           )}
@@ -101,4 +103,4 @@ const Login = () => {
     </section>
   );
 };
-export default isNotAuth(Login);
+export default Login;
