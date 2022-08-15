@@ -1,13 +1,11 @@
 import styles from './BaitDetailsCard.module.css';
 import { useAuthContext } from '../../../contexts/AuthContext';
-import { useNavigate } from 'react-router-dom';
-import * as baitService from '../../../services/baitService';
 import { Link } from 'react-router-dom';
 
 
 
 const BaitDetailsCard =({bait,  setShowDeleteDialog})=>{
-const navigate = useNavigate();
+
 const { userInfo } = useAuthContext();
 const token = userInfo.accessToken;
 
