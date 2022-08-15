@@ -1,66 +1,55 @@
 import { useAuthContext } from "../../../contexts/AuthContext";
 import {  useState } from "react";
-import * as commentService from "../../../services/commentService";
-import { useNavigate } from "react-router-dom";
+
 
 
 import styles from "./Comments.module.css";
 
-export const Comment = ({ comment, baitId, comments, setComments}) => {
+export const Comment = ({ comment, deleteComment, editComment}) => {
     
-  const navigate = useNavigate();
+
 
   const { userInfo } = useAuthContext();
-  const token = userInfo.accessToken;
-  console.log(token)
-  const email = userInfo.email;
+ 
   const [editMode, setMode] = useState(false);
   const edit = () => {
     setMode(true);
 
   };
-  const editComment = (e) => {
-    e.preventDefault();
-    console.log(comment._id)
-   let { text } = Object.fromEntries(new FormData(e.currentTarget));
-    let commentData = { text, email, baitId };
-    console.log(text)
-   commentService.editOneComment(token, commentData, comment._id)
-   .then((data) => {
-    
-        console.log(data.text)
-        let arr = comments;
-        arr.map((x) => {
-          if (x._id === comment._id) {
-            console.log(x._id);
-            console.log({x});
-            return x.text= data.text ;
-          }
-          return x;
-        });
-        
-        setComments(arr);
-        
-        setMode(false)
-      
-      });
-     
-     
-  }
+  //const editComment = (e) => {
+  //  e.preventDefault();
+  //  console.log(comment._id)
+  // let { text } = Object.fromEntries(new FormData(e.currentTarget));
+  //  let commentData = { text, email, baitId };
+  //  console.log(text)
+  // commentService.editOneComment(token, commentData, comment._id)
+  // .then((data) => {
+  //  
+  //      console.log(data.text)
+  //      let arr = comments;
+  //      arr.map((x) => {
+  //        if (x._id === comment._id) {
+  //          console.log(x._id);
+  //          console.log({x});
+  //          return x.text= data.text ;
+  //        }
+  //        return x;
+  //      });
+  //      
+  //      setComments(arr);
+  //      
+  //      setMode(false)
+  //    
+  //    });
+  //   
+  //   
+  //}
+ //
+ //
+ //
  
  
  
- 
- 
- const deleteComment = () => {
-   console.log("deleted")
-   console.log(comment._id)
-
-   commentService.deleteOneComment(token, comment._id)
-   .then(setComments((state) => state.filter(x=>x._id!==comment._id)));
-   
-  
- };
  
 
 
@@ -94,8 +83,8 @@ let editView =
   ></textarea>
 
   <div className={styles.comments__buttons__edit__mode}>
-    <button className={styles.comments__buttons__edit__mode__save} >
-      Save
+    <button  className={styles.comments__buttons__edit__mode__save}  >
+      Save 
     </button>
     <button className={styles.comments__buttons__edit__mode__cancel} onClick ={cancelEdit}>
       Cancel

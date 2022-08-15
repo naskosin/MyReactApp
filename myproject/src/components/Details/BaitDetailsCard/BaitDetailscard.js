@@ -4,17 +4,14 @@ import { Link } from 'react-router-dom';
 
 
 
-const BaitDetailsCard =({bait,  setShowDeleteDialog})=>{
-
+const BaitDetailsCard =({bait,  deleteClick})=>{
 const { userInfo } = useAuthContext();
-const token = userInfo.accessToken;
 
 
-const deleteClick =()=>{
-  setShowDeleteDialog(true)
-}
+
+
  
-const ownerButtons = <div>
+const ownerButtons = <div className={styles.ownerButtons}>
 <button  className={styles.edit}>
   <Link to={`/gallery/edit/${bait._id}`}>Edit article</Link>
 </button>
@@ -23,19 +20,14 @@ const ownerButtons = <div>
 </button>
 </div>;
 
-    //const deletePost = () => {
-    //  
-    //    baitService.deleteOneBait(token, bait._id).then((data) => console.log('deleted'));
-    //    navigate("/");
-    //  };
-//
+
 
   return (
 
 <section className={styles.sectionmain}>
         <article className={styles.main}>
           <div className={styles.mainimgwrapper}>
-            <img src={bait.img} className={styles.mainimg} alt="No picture" />
+            <img src={bait.img} className={styles.mainimg} alt="Bait" />
           </div>
           <div className={styles.detailsdiv}>
             <p>

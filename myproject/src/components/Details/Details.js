@@ -8,7 +8,6 @@ import Comment from "./Comments/Comment";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useCommentValidator } from "../../hooks/useCommentValidator";
 import ConfirmDialog from "../Common/ConfirmDialog/ConfirmDialog";
-import { useNotifyContext } from "../../contexts/NotifyContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./Details.module.css";
 
@@ -21,35 +20,38 @@ const Details = () => {
   const { userInfo } = useAuthContext();
   const { baitId } = useParams();
   const [showDeleteDialog, setShowDeleteDialog] = useState(false);
-  const { errorNotification, notification } = useNotifyContext();
+
 
   const navigate = useNavigate();
 
-  console.log(baitId);
+
 
   const token = userInfo.accessToken;
 
   const email = userInfo.email;
 
   useEffect(() => {
-    commentService.getAllComments(baitId).then((res) => {
+    commentService.getAllComments(baitId).then((data) => {
     
-
-      setComments(res);
+      setComments(data);
     });
     baitService.getOneBait(baitId).then((res) => {
       setBait(res);
     });
-  }, []);
+  },[]);
 
+  const deleteOnClick =()=>{
+    setShowDeleteDialog(true)
+  }
   const deleteBait = () => {
     baitService
       .deleteOneBait(token, bait._id)
-      .then(() => navigate("/gallery"))
-      .catch((err) => {
-        notification(err);
-        console.log(errorNotification)})
+      .then(() => navigate("/allbaits"))
+      .finally(() => {
+    setShowDeleteDialog(false);
+});
   }
+
   const createYourComment = (e) => {
     e.preventDefault();
     let { text } = Object.fromEntries(new FormData(e.currentTarget));
@@ -61,6 +63,24 @@ const Details = () => {
     e.target.reset();
   };
 
+  const deleteComment = (commentId ) => {
+    commentService.deleteOneComment(token,  commentId)
+    .then(setComments((state) => state.filter(x=>x._id!== commentId))); 
+  };
+
+  const editComment = (e, commentId) => {
+     e.preventDefault();
+ 
+    let { text } = Object.fromEntries(new FormData(e.currentTarget));
+    let commentData = { text, email, baitId };
+    console.log(text)
+   commentService.editOneComment(token, commentData, commentId)
+   .then(() => {navigate(0)
+    
+   
+  });
+}    
+    
   return (
     <>
       <ConfirmDialog
@@ -71,7 +91,7 @@ const Details = () => {
       {
         <BaitDetailsCard
           bait={bait}
-          setShowDeleteDialog={setShowDeleteDialog}
+          deleteClick={deleteOnClick}
         />
       }
       {comments.length > 0 ? (
@@ -81,9 +101,8 @@ const Details = () => {
               key={x._id}
               comment={x}
               commentId={x._id}
-              baitId={baitId}
-              comments={comments}
-              setComments={setComments}
+              deleteComment={()=>deleteComment(x._id)}
+              editComment={(e)=>editComment(e,x._id)}
             />
           ))}
         </section>
