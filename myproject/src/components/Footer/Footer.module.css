@@ -37,7 +37,9 @@ footer ul {
   padding: 2px;
   color: #7bb6da;
 }
-
+.description{
+  margin: 25px auto;
+}
 .description__p {
   padding-top: 10px;
   padding-left: 10px;

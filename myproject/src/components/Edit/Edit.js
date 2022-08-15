@@ -18,40 +18,38 @@ const Edit = () => {
   const navigate = useNavigate();
   const { baitId } = useParams();
   const { userInfo } = useAuthContext();
-  const [bait, baitState] = useState({});
+  const [bait, setBait] = useState({});
   const [error, setError, isFormValid] = useHandler(initialState);
-  const editOne = (e) => {
-    e.preventDefault();
-    const token = userInfo.accessToken;
-    console.log(token);
-    const { baitType, bait, img, story, weight } = Object.fromEntries(
-      new FormData(e.currentTarget)
-    );
-    let petData = { baitType, bait, img, story, weight };
-    console.log(petData);
-    baitService
-      .editOneBait(token, petData, baitId)
-      .then((data) => console.log(data));
-    navigate(`/gallery/${baitId}`);
-  };
+
   useEffect(() => {
     baitService
       .getOneBait(baitId)
-
       .then((data) => {
-        baitState(data);
+        setBait(data);
       });
   }, []);
+  const editOne = (e) => {
+    e.preventDefault();
+    const token = userInfo.accessToken;
+    const { baitType, bait, img, fish_img, story, weight } = Object.fromEntries(
+      new FormData(e.currentTarget)
+    );
+    let petData = { baitType, bait, img, fish_img, story, weight };
+    console.log(petData);
+    baitService.editOneBait(token, petData, baitId).then((data) => {
+     
 
-  let baitd = bait._id;
+      navigate(`/gallery/${baitId}`);
+    });
+  };
 
   return (
     <div className={styles.createcontainerinfo}>
-      <img src="/assets/01-azores-baiting.jpg" alt="image" />
+      <img src="/assets/03.png" alt="Catched fish" />
 
       <form className={styles.containertext} onSubmit={editOne}>
         <h2>Edit Catch</h2>
-        <p>Add your bait of lifetime!</p>
+        <p className={styles.containertext__p}>Add your bait of lifetime!</p>
 
         <label htmlFor="title">Bait Type:</label>
         <input
@@ -135,7 +133,9 @@ const Edit = () => {
           ""
         )}
 
-        <label className={styles.label} htmlFor="certificate">Story:</label>
+        <label className={styles.label} htmlFor="certificate">
+          Story:
+        </label>
         <textarea
           type="text"
           placeholder="This day..."
@@ -147,7 +147,7 @@ const Edit = () => {
           className={
             error.story && error.story !== "Filled"
               ? styles.inputerror
-              : styles.textarea
+              : styles.input
           }
         ></textarea>
         {error.story && error.story !== "Filled" ? (

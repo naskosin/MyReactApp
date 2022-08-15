@@ -24,7 +24,7 @@ const logOut = () =>{
 let loggedNavigation =  
   
 <nav className={styles.isLogged}>
- <p className={styles.username} >Hi, {userInfo.email}!</p> 
+ <p className={styles.username} >Hi, <span className={styles.username__span}>{userInfo.email}</span>!</p> 
 <ul>
   <li>
     <Link className={styles.header__a} to="/">Home</Link>
@@ -39,7 +39,7 @@ let loggedNavigation =
   <li>
     <Link  className={styles.header__a} to="/biggestfishes">Biggest Fishes</Link>
   </li>
-  <li><Link  className={styles.header__a} to="/search">Search</Link></li>
+  <li><Link  className={styles.header__a} to="search">Search</Link></li>
   <li>
     <Link  className={styles.header__a} to="/mybaits">My baits</Link>
 
@@ -79,8 +79,6 @@ let loggedNavigation =
     return (<header className={styles.header}>
     <h1>Best trout baits</h1>
     {userInfo.email ? loggedNavigation : guestNavigation}
-  
-    
      
     {errorNotification ? <p className={styles.notification} >{errorNotification} </p> : ''} 
    

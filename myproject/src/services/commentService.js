@@ -1,6 +1,8 @@
 const apiUrl = 'https://nasko-fish.herokuapp.com/data/';
-export function getAllComments(){
-   return fetch('https://nasko-fish.herokuapp.com/data/comments')
+export function getAllComments(baitId){
+  const query= encodeURIComponent(`baitId="${baitId}"`)
+
+   return fetch(`https://nasko-fish.herokuapp.com/data/comments?where=${query}`)
      .then(res=>res.json())
    
  }

@@ -79,7 +79,7 @@ h4 {
   top: 30px;
   right: 30px;
   padding: 0 5px;
-  color: white;
+  color: black;
   background-color: aqua;
   font-size: 20px;
 }
@@ -120,6 +120,15 @@ h4 {
   border: solid 4px red;
   border-radius: 30px;
 }
+.username__span{
+  color:rgb(234, 16, 162);
+  display: inline;
+  font-size: 20px;
+  font-style: italic;
+  padding: 5px;
+}
+
+
 @media only screen and (max-width: 600px) {
   .header > h1 {
     font-size: 2rem;
