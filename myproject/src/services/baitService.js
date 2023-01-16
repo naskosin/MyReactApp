@@ -1,7 +1,7 @@
-const apiUrl = 'https://nasko-fish.herokuapp.com/data/fishes';
+const apiUrl = 'https://fishes.onrender.com/data/fishes';
 
 export function getAllBaits(){
-    return fetch('https://nasko-fish.herokuapp.com/data/fishes')
+    return fetch('https://fishes.onrender.com/data/fishes')
       .then(res=>res.json())
     
   }
@@ -9,7 +9,7 @@ export function getAllBaits(){
   export function getSearchedBaits(searchText){
     const query= encodeURIComponent(`bait LIKE "${searchText}"`)
   
-     return fetch(`https://nasko-fish.herokuapp.com/data/fishes?where=${query}`)
+     return fetch(`https://fishes.onrender.com/data/fishes?where=${query}`)
        .then(res=>res.json())
      
    }
@@ -20,7 +20,7 @@ export function getAllBaits(){
     
   }
   export async function createOne(token, petData){
-    let res = await fetch('https://nasko-fish.herokuapp.com/data/fishes', {
+    let res = await fetch('https://fishes.onrender.com/data/fishes', {
        method: 'POST',
        headers: {
          'content-type': 'applications/json',
@@ -34,7 +34,7 @@ export function getAllBaits(){
     };
 
     export async function editOneBait(token, petData, id){
-      let res = await fetch(`https://nasko-fish.herokuapp.com/data/fishes/${id}`, {
+      let res = await fetch(`https://fishes.onrender.com/data/fishes/${id}`, {
          method: 'PUT',
          headers: {
            'content-type': 'applications/json',
@@ -48,7 +48,7 @@ export function getAllBaits(){
       };
 
       export async function deleteOneBait(token, id){
-        let res = await fetch(`https://nasko-fish.herokuapp.com/data/fishes/${id}`, {
+        let res = await fetch(`https://fishes.onrender.com/data/fishes/${id}`, {
            method: 'DELETE',
            headers: {
              'content-type': 'applications/json',

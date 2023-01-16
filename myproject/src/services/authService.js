@@ -1,5 +1,5 @@
 
-const apiUrl = 'https://nasko-fish.herokuapp.com/users';
+const apiUrl = 'https://fishes.onrender.com/users';
 
 
 async function resulter(res){

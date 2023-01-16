@@ -1,13 +1,13 @@
-const apiUrl = 'https://nasko-fish.herokuapp.com/data/';
+const apiUrl = 'https://fishes.onrender.com/data/';
 export function getAllComments(baitId){
   const query= encodeURIComponent(`baitId="${baitId}"`)
 
-   return fetch(`https://nasko-fish.herokuapp.com/data/comments?where=${query}`)
+   return fetch(`https://fishes.onrender.com/data/comments?where=${query}`)
      .then(res=>res.json())
    
  }
  export async function createComment(token, text){
-    let res = await fetch('https://nasko-fish.herokuapp.com/data/comments', {
+    let res = await fetch('https://fishes.onrender.com/data/comments', {
        method: 'POST',
        headers: {
          'content-type': 'applications/json',
@@ -21,7 +21,7 @@ export function getAllComments(baitId){
     };
 
     export async function editOneComment(token, text, id){
-        let res = await fetch(`https://nasko-fish.herokuapp.com/data/comments/${id}`, {
+        let res = await fetch(`https://fishes.onrender.com/data/comments/${id}`, {
            method: 'PUT',
            headers: {
              'content-type': 'applications/json',
@@ -35,7 +35,7 @@ export function getAllComments(baitId){
         };
   
         export async function deleteOneComment(token, id){
-          let res = await fetch(`https://nasko-fish.herokuapp.com/data/comments/${id}`, {
+          let res = await fetch(`https://fishes.onrender.com/data/comments/${id}`, {
              method: 'DELETE',
              headers: {
                'content-type': 'applications/json',
