@@ -131,18 +131,19 @@ h4 {
 
 @media only screen and (max-width: 600px) {
   .header > h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   .header > nav {
     display: inline-block;
     margin: 0;
     text-align: right;
+    width: 100%
   }
  
   .header li {
     text-align: center;
     display: inline-block;
-
+    margin: 2px;
     border-radius: 4px;
     background-color: lightskyblue;
     border-top-left-radius: 30px;
@@ -158,4 +159,6 @@ h4 {
     font-weight: bold;
     font-size: 10px;
   }
+}
+@media only screen and (max-width: 600px) {
 }
