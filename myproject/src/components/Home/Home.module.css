@@ -36,10 +36,16 @@
    
       overflow: hidden;
       width: 100%;
-     height:auto;
+     height:50%;
       border-top-left-radius: 30px;  
       margin-bottom: 5px; 
       margin: 50px auto;
+      
+   }
+   .home{
+      border-radius: 50px;
+  
+      margin: 200px 10% 20% 10% ;
       
    }
    }

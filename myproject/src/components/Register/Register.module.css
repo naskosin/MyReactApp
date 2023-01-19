@@ -43,7 +43,7 @@
 .containertext {
   padding: 10px;
   text-align: center;
-  width: 60%;
+  width: 80%;
 }
 
 .containertext > h2 {
@@ -125,4 +125,53 @@ input {
   margin-left: 15px;
   background-color: lightgrey;
   padding: 20px;
+}
+@media only screen and (max-width: 600px) {
+ 
+  label {
+    color: #190c4d;
+
+    font-size: 10px;
+    font-family: "Barlow", sans-serif;
+    font-weight: 700;
+  }
+  .paragraph {
+    font-size: 8px;
+    color: #3b4169;
+    width: 100%;
+    margin: 2px 0;
+    margin-bottom: 0px;
+    text-indent: 0px;
+    text-align: center;
+  }
+  input {
+    border: 2px solid lightskyblue;
+    margin: 1px 0 2px;
+    font-size: 0.2rem;
+    color: #656880;
+    width: 80%;
+    padding: 10px;
+    border-radius: 3px;
+    box-sizing: content-box;
+  }
+  .containertext {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+  .button {
+    font-size: 10px;
+    background-color: #19bec2;
+    text-align: center;
+    margin: 0px;
+    padding: 1px;
+    width: 60%;
+  }
+  .button:disabled {
+    text-align: center;
+    margin: 0px;
+    background-color: lightgrey;
+    padding: 1px;
+    width: 60%;
+  }
 }

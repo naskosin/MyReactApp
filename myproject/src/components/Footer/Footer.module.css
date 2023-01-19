@@ -52,3 +52,26 @@ footer ul {
   margin-top: 15px;
   margin-right: 5px;
 }
+@media only screen and (max-width: 600px) {
+  .description__p {
+  display: none;
+  }
+  
+  .description{
+    margin: 0px;
+  }
+    .footer__li {
+      padding: 1px;
+      color: aliceblue;
+      font-size: 10px;
+      display: list-item;
+      list-style-type: none;
+      text-align: left;
+      border: none;
+    }
+    .footer__a {
+      padding: 2px;
+      color: #7bb6da;
+    }
+
+    }
